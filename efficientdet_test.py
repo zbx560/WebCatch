@@ -26,8 +26,8 @@ anchor_scales = [2 ** 0, 2 ** (1.0 / 3.0), 2 ** (2.0 / 3.0)]
 threshold = 0.2
 iou_threshold = 0.2
 
-use_cuda = True
-use_float16 = False
+use_cuda = False
+use_float16 = True
 cudnn.fastest = True
 cudnn.benchmark = True
 
@@ -58,7 +58,7 @@ x = x.to(torch.float32 if not use_float16 else torch.float16).permute(0, 3, 1, 2
 
 model = EfficientDetBackbone(compound_coef=compound_coef, num_classes=len(obj_list),
                              ratios=anchor_ratios, scales=anchor_scales)
-model.load_state_dict(torch.load(f'weights/efficientdet-d{compound_coef}.pth'))
+model.load_state_dict(torch.load(f'datasets/efficientdet-d{compound_coef}.pth'))
 model.requires_grad_(False)
 model.eval()
 
