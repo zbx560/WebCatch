@@ -129,3 +129,17 @@ dmypy.json
 .pyre/
 .idea/
 weights/
+/benchmark/
+/efficientdet/
+/efficientnet/
+/projects/
+/res/
+/test/
+/tutorial/
+/utils/
+/.gitignore
+/backbone.py
+/coco_eval.py
+/train.py
+/
+/utils
